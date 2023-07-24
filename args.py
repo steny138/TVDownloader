@@ -12,7 +12,9 @@ def get_parser():
                         help="Enter True for download random ")
     parser.add_argument("--url", type=str, default="",
                         help="Jable TV URL to download")
-
+    parser.add_argument("--all-urls", type=str, default="",
+                        help="Jable URL contains multiple avs")
+    
     return parser
 
 

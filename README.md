@@ -6,43 +6,55 @@
 
 直接下載到電腦看沒煩惱
 
-### vitual env
-```
-python3 -m venv jable
-source jable/bin/activate. # MacOS
-```
+### 1.搭建並啟用虛擬環境(Activate Virtual Environment)
 
-### requirements
+```
+python -m venv jable
+jable/Scripts/activate
+```
+![image](https://github.com/hcjohn463/JableDownload/blob/main/img/createVenv.PNG)  
+
+### 2.下載所需套件、檔案(Download Requirement Files)
+a.
 `pip install -r requirements.txt`
 
-安裝 [FFmpeg] (未安裝也能下載 但影片拖拉時間軸會有卡幀情況發生)
+![image](https://github.com/hcjohn463/JableDownload/blob/main/img/requirements.PNG)
 
-### 執行程式(Execute)
+b.
+下載ChromeDriver至資料夾 [ChromeDriver]
+
+![image](https://github.com/hcjohn463/JableDownload/blob/main/img/chromeDriver.PNG)  
+
+c.
+安裝 [FFmpeg] 用於轉檔，此畫面代表FFmpeg安裝成功 (不安裝也可以看，不過影片會有拖拉卡幀的狀況)
+
+![image](https://github.com/hcjohn463/JableDownload/blob/main/img/ffmpeg.png)
+
+### 3.執行程式(Execute)
 `python main.py`
 
-### 輸入影片網址(Input video url)
+### 4.輸入影片網址(Input Video Url)
 `https://jable.tv/videos/ipx-486/`    
-![image](https://github.com/hcjohn463/JableDownload/blob/main/img/input.PNG)  
+![image](https://github.com/hcjohn463/JableDownload/blob/main/img/download2.PNG)  
 
-### 等待下載(Wait download)  
+### 5.等待下載(Wait Download)  
+要轉檔輸入`y`，不要輸入`n`   
+要用GPU加速(Nvidia)轉檔輸入`y`，用CPU輸入`n`   
+
 ![image](https://github.com/hcjohn463/JableDownload/blob/main/img/download.PNG)
 
-### 完成(Finish)
-![image](https://github.com/hcjohn463/JableDownload/blob/main/img/3.PNG)
+### 6.等待轉檔(Wait Encode) 
+![image](https://github.com/hcjohn463/JableDownload/blob/main/img/encoding.png)
 
-如果覺得好用 再麻煩給個星星好評 謝謝!!
+![image](https://github.com/hcjohn463/JableDownload/blob/main/img/encoded.png)
 
-## #####選擇性使用(Optional use)#####
+### 7.完成(Finish)
+![image](https://github.com/hcjohn463/JableDownload/blob/main/img/demo2.png)
 
-### 使用FFmpeg轉檔優化 : 參數能自己調(Use FFmpeg encode) 
-`cd ipx-486`  
-`ffmpeg -i ipx-486.mp4 -c:v libx264 -b:v 3M -threads 5 -preset superfast f_ipx-486.mp4`  
-  
-![image](https://github.com/hcjohn463/JableDownload/blob/main/img/ff.PNG)
+### 如果覺得好用 再麻煩給個星星好評 謝謝!!
+---
 
-### 轉檔完成(Finish encode)
-![image](https://github.com/hcjohn463/JableDownload/blob/main/img/different.PNG)
-
+[ChromeDriver]:<https://chromedriver.chromium.org/downloads>
 [FFmpeg]:<https://www.ffmpeg.org/>  
 
 ### Argument parser
@@ -61,7 +73,9 @@ source jable/bin/activate. # MacOS
 ![](https://i.imgur.com/DKFrD7T.png)
 
 ### 更新日誌(Update log)
-
+ 🦕 2023/4/19 新增ffmpeg自動轉檔 v1.11   
+ 🏹 2023/4/19 兼容Ubuntu Server v1.10   
+ 🦅 2023/4/15 輸入演員鏈接，下載所有該演員相關的影片 v1.9   
  🚗 2022/1/25 下載結束後抓封面 v1.8   
  🐶 2021/6/4 更改m3u8得到方法(正則表達式) v1.7  
  🌏 2021/5/28 更新代碼讓Unix系統(Mac,linux等)能使用 v1.6  
